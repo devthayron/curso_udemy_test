@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Produto</h1>
+
+    <table>     <!-- Cria a tabela para exibir os produtos -->
+        <thead>     <!-- Cabeçalho da tabela -->
+            <tr>    <!-- Linha com os títulos das colunas -->
+                <th>Produto</th>    <!-- Título da coluna para o nome do produto -->
+                <th>Preço</th>      <!-- Título da coluna para o preço do produto -->
+                <th>Estoque</th>    <!-- Título da coluna para a quantidade em estoque -->
+            </tr>
+        </thead>
+        <tbody>     <!-- Corpo da tabela que exibe os dados dinâmicos do produto -->
+            <tr>    <!-- Linha com os dados do produto -->
+                <td><a href="{% url 'index' %}"> {{ produto.nome }}</a></td>    <!-- link para index no nome do produto -->
+                <td>{{ produto.preco }}</td>    <!-- Preço do produto vindo do context 'produto' na view -->
+                <td>{{ produto.estoque }}</td>  <!-- Estoque do produto vindo do context 'produto' na view -->
+            </tr> 
+        </tbody>
+    </table>
+</body>
+</html>

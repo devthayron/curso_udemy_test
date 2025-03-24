@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>core - index</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <center>
+    <h1>Page Index</h1>
+    <img src="{% static 'images/django.png' %}" alt="logo do django" width="400">
+    <h2>{{ curso }}</h2>      <!-- Exibe o valor da variável 'curso' passada pelo context na view -->
+    <p> {{ dev }} </p>        <!-- Exibe o valor da variável 'dev' passada pelo context na view -->
+
+    <table>     <!-- Cria a tabela para exibir os dados -->
+        <thead>     <!-- Cabeçalho da tabela -->
+            <tr>    <!-- Linha que contém os títulos das colunas -->
+                <th>Produto</th>    <!-- Título da coluna para o nome do produto -->
+                <th>Preço</th>      <!-- Título da coluna para o preço do produto -->
+            </tr>
+        </thead>
+        <tbody>     <!-- Corpo da tabela que exibe os dados dos produtos -->
+            {% for produto in produtos %}
+            <tr>    <!-- Linha com os dados de um produto -->
+                <td> 
+                    <a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a>  <!-- nome vindo do context 'produto' na view -->
+                        <!-- Link para a URL 'produto' com o ID do produto, definida na view -->
+                </td>
+                <td>{{ produto.preco }}</td>    <!-- Preço do produto vindo do context 'produto' na view -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="teste();">Clique aqui</button>
+    </center>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
