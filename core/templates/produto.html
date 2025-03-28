@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>core - Produto</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Page Produto</h1>
+    <img src="{% static 'images/ps5.webp' %}" alt="logo do django">
+    <table>     <!-- Cria a tabela para exibir os dados -->
+        <thead>     <!-- Cabeçalho da tabela -->
+            <tr>    <!-- Linha que contém os títulos das colunas -->
+                <th>Produto</th>    <!-- Título da coluna para o nome do produto -->
+                <th>Preço</th>      <!-- Título da coluna para o preço do produto -->
+            </tr>
+        </thead>
+        <tbody>     <!-- Corpo da tabela que exibe os dados do produto -->
+            <tr>    <!-- Linha com os dados do produto -->
+                <td> 
+                    <a href="{% url 'index' %}">{{ produto.nome }}</a>  <!-- Exibe o nome do produto -->
+                </td>
+                <td>{{ produto.preco }}</td>    <!-- Exibe o preço do produto -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
