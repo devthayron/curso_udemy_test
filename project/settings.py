@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z9_ivz80lc$u@%!nn9i)=y6@_!c0wjup41wh_-t0waefzj5vkp
 DEBUG = False
 #botar false quando o programa for para o ar
 
-ALLOWED_HOSTS = ['https://git.heroku.com/project-teste.git']
+ALLOWED_HOSTS = ['*']
 #dominio
 
 # Application definition
